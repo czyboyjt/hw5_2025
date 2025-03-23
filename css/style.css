@@ -36,8 +36,10 @@ header {
 
 .card {
     border-radius: 50px 50px 0px 0px;
-    flex-basis: 450px;
-}
+    flex: 1 1 450px;
+    max-width: 450px;
+    }
+
 .card > header {
     background-color: #288088;
     border: solid 2px #288088 ;
@@ -49,7 +51,10 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    flex-wrap: wrap;
+    align-items: stretch;
+    align-content: center;
+    width: auto;
 }
 
 .gallery {
@@ -65,9 +70,6 @@ header {
     width: 300px;
 }
 
-.card:nth-of-type(2) {
-    flex-shrink: 10;
-}
 
 @media screen and (min-width: 900px) {
     header {
@@ -85,6 +87,7 @@ header {
     }
 
     .card {
+        max-width: auto;
         flex-basis: 275px;
     }
 
@@ -116,6 +119,8 @@ header {
         flex-direction: row;
         justify-content: center;
         align-content: baseline;
+        align-items: none;
+        flex-wrap: nowrap;
     }
     .card {
         border: solid 2px #45ADDD;
@@ -131,4 +136,5 @@ header {
     .pricing .card ul li:nth-child(2)::after {
         content: "👍" ;
     }
+    
 }
